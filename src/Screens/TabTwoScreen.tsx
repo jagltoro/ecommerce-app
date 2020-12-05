@@ -1,0 +1,11 @@
+import * as React from 'react';
+import { Text, View} from 'react-native';
+
+
+export default function TabTwoScreen() {
+  return (
+    <View>
+      <Text>aaaa</Text>
+    </View>
+  );
+}
