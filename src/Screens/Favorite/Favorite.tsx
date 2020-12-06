@@ -1,10 +1,13 @@
 import * as React from 'react';
 import { Text, View } from 'react-native';
 
-export default function TabOneScreen() {
+
+const Favorite = () => {
   return (
     <View>
-      <Text>hola</Text>
+      <Text>Favorite</Text>
     </View>
   );
-}
+};
+
+export default Favorite;

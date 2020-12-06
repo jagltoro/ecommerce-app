@@ -4,6 +4,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import useCachedResources from './src/Components/useCachedResources';
 import Navigation from './src/Components/Navigation';
+import { ThemeProvider } from '@shopify/restyle';
+import { theme } from './src/Components/Theme';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -12,10 +14,12 @@ export default function App() {
     return null;
   } else {
     return (
-      <SafeAreaProvider>
-        <Navigation />
-        <StatusBar />
-      </SafeAreaProvider>
+      <ThemeProvider theme={theme}>
+        <SafeAreaProvider>
+          <Navigation />
+          <StatusBar />
+        </SafeAreaProvider>
+      </ThemeProvider>
     );
   }
 }
