@@ -8,7 +8,8 @@ const palette = {
     "color-warning": "#B86E00",
     "color-danger": "#700940",
     "color-basic": "#FFFFFF",
-    "color-basic-text": "#151A30",
+    "color-basic-text": "#605A65",
+    "color-basic-titles": "#34283E",
     "color-gray":   "#949494",
     "transparent": "transparent",
   };
@@ -16,6 +17,7 @@ const palette = {
 export const theme = createTheme({
     colors: {
       background: palette["color-basic"],
+      headerText: palette["color-basic"],
       text: palette["color-basic-text"],
       primary: palette["color-primary"],
       success: palette["color-success"],
@@ -23,12 +25,17 @@ export const theme = createTheme({
       warning: palette["color-warning"],
       danger: palette["color-danger"],
       transparent: palette['transparent'],
+
+      gradientStart: "#34283E",
+      gradientEnd: "#845FA1",
+
     },
     spacing: {
       s: 8,
       m: 16,
       l: 24,
-      xl: 40,
+      xl: 32,
+      xxl: 40,
     },
     breakpoints: { },
     borderRadii: {
@@ -39,6 +46,11 @@ export const theme = createTheme({
       xl: 75,
     },
     textVariants: {
+      header:{
+        fontSize: 19,
+        fontFamily: "SF-Bold",
+        color: "headerText",
+      },
       title:{
         fontSize: 48,
         fontFamily: "SF-Bold",

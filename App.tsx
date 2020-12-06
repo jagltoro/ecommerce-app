@@ -17,7 +17,7 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <SafeAreaProvider>
           <Navigation />
-          <StatusBar />
+          <StatusBar style="light" />
         </SafeAreaProvider>
       </ThemeProvider>
     );

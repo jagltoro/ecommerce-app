@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome5 as Icon } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import {HomeTabNavigator} from './Tabs/HomeTab';
@@ -52,5 +52,5 @@ export default function BottomTabNavigator() {
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
 function TabBarIcon(props: { name: string; color: string }) {
-  return <FontAwesome5 size={20} style={{ marginBottom: -3 }} {...props} />;
+  return <Icon size={20} style={{ marginBottom: -3 }} {...props} />;
 }

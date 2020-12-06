@@ -1,11 +1,18 @@
-import * as React from 'react';
-import { Box, Text } from '../../Components/Theme';
-
+import * as React from "react";
+import Header from "../../Components/Header";
+import { Box, Text } from "../../Components/Theme";
 
 const Home = () => {
   return (
     <Box flex={1} backgroundColor="background">
-      <Text>HomeTab</Text>
+      <Header
+        paddingVertical="xxl"
+        title="MyShop"
+        icons={{ left: "arrow-left", right: "bell" }}
+      />
+      <Box paddingHorizontal="m">
+        <Text>HomeTab</Text>
+      </Box>
     </Box>
   );
 };
