@@ -7,16 +7,18 @@ const palette = {
     "color-info": "#002885",
     "color-warning": "#B86E00",
     "color-danger": "#700940",
+    "color-background": "#F4F3F4",
     "color-basic": "#FFFFFF",
     "color-basic-text": "#605A65",
     "color-basic-titles": "#34283E",
-    "color-gray":   "#949494",
+    "color-gray":   "#9B9B9B",
     "transparent": "transparent",
   };
 
 export const theme = createTheme({
     colors: {
-      background: palette["color-basic"],
+      background: palette["color-background"],
+      searchBackground: palette["color-basic"],
       headerText: palette["color-basic"],
       text: palette["color-basic-text"],
       primary: palette["color-primary"],
@@ -24,6 +26,7 @@ export const theme = createTheme({
       info: palette["color-info"],
       warning: palette["color-warning"],
       danger: palette["color-danger"],
+      secondaryText: palette['color-gray'],
       transparent: palette['transparent'],
 
       gradientStart: "#34283E",
