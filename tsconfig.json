@@ -19,5 +19,5 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*","node_modules/react-native-redash/lib/typescript/v1/index.d.ts"]
 }

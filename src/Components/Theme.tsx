@@ -5,7 +5,7 @@ const palette = {
     "color-primary": "#3366FF",
     "color-success": "#00524C",
     "color-info": "#002885",
-    "color-warning": "#B86E00",
+    "color-warning": "#E7B944",
     "color-danger": "#700940",
     "color-background": "#F4F3F4",
     "color-basic": "#FFFFFF",
@@ -20,6 +20,7 @@ export const theme = createTheme({
       background: palette["color-background"],
       searchBackground: palette["color-basic"],
       headerText: palette["color-basic"],
+      
       text: palette["color-basic-text"],
       primary: palette["color-primary"],
       success: palette["color-success"],
@@ -53,6 +54,15 @@ export const theme = createTheme({
         fontSize: 19,
         fontFamily: "SF-Bold",
         color: "headerText",
+      },
+      slideTitle:{
+        fontSize: 25,
+        fontFamily: "SF-Bold",
+        color: "headerText",
+      },
+      slideMore:{
+        fontSize: 12,
+        fontFamily: "SF-Regular",
       },
       title:{
         fontSize: 48,

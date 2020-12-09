@@ -1,25 +1,26 @@
 import * as React from "react";
+import { View } from "react-native";
 import Header from "../../Components/Header";
 import Search from "../../Components/Search";
-import { Box, Text } from "../../Components/Theme";
+import { useTheme } from "../../Components/Theme";
+import Slideshow from "./Slideshow";
 
 const Home = () => {
+  const theme = useTheme();
   return (
-    <>
-    <Header
-      paddingVertical="xxl"
-      title="MyShop"
-      icons={{ right: "bell" }}
-    />
-    <Box flex={1} backgroundColor="background">
-      <Box justifyContent="center" alignItems="center" marginBottom="xxl">
-        <Search />
-      </Box>
-      <Box paddingHorizontal="m">
-        <Text>HomeTab</Text>
-      </Box>
-    </Box>
-    </>
+    <View>
+      <Header
+        paddingVertical="xxl"
+        title="MyShop"
+        icons={{ right: "bell" }}
+      />
+      <View style={{flex: 1, backgroundColor: theme.colors['background'],justifyContent: "center", alignItems: "center", marginBottom: theme.spacing.xxl}}>
+          <Search />
+      </View>
+      <View>
+        <Slideshow/>
+      </View>
+    </View>
   );
 };
 
