@@ -6,7 +6,7 @@ const palette = {
     "color-success": "#00524C",
     "color-info": "#002885",
     "color-warning": "#E7B944",
-    "color-danger": "#700940",
+    "color-danger": "#CE3E3E",
     "color-background": "#F4F3F4",
     "color-basic": "#FFFFFF",
     "color-basic-text": "#605A65",
@@ -19,9 +19,12 @@ export const theme = createTheme({
     colors: {
       background: palette["color-background"],
       searchBackground: palette["color-basic"],
+      favoriteBackground: palette["color-basic"],
       headerText: palette["color-basic"],
+      photoBackground: palette["color-basic"],
       
       text: palette["color-basic-text"],
+      titles: palette["color-basic-titles"],
       primary: palette["color-primary"],
       success: palette["color-success"],
       info: palette["color-info"],
@@ -32,6 +35,11 @@ export const theme = createTheme({
 
       gradientStart: "#34283E",
       gradientEnd: "#845FA1",
+      
+      discountGradientStart: "#D23A3A",
+      discountGradientEnd: "#F49763",
+
+      cardForeground: "rgba(52, 40, 62, 0.5)",
 
     },
     spacing: {
@@ -64,10 +72,53 @@ export const theme = createTheme({
         fontSize: 12,
         fontFamily: "SF-Regular",
       },
-      title:{
-        fontSize: 48,
+
+      catalogueTitle: {
+        fontFamily: "SF-Regular",
+        fontSize: 14,
+        color: "headerText",
+        textAlign: "center"
+      },
+
+      sellItemTitle: {
+        fontFamily: "SF-Regular",
+        fontSize: 14,
+        color: "titles",
+      },
+      sellItemDiscountTag: {
         fontFamily: "SF-Bold",
-        color: "text",
+        fontSize: 11,
+        color: "headerText",
+      },
+      sellItemDiscountPrice: {
+        fontFamily: "SF-Bold",
+        fontSize: 17,
+        color: "danger",
+      },
+      sellItemPrice: {
+        fontFamily: "SF-Bold",
+        fontSize: 17,
+        color: "titles",
+      },
+      sellItemOldPrice: {
+        fontFamily: "SF-Bold",
+        fontSize: 14,
+        color: "secondaryText",
+        textDecorationLine: 'line-through'
+      },
+
+
+      title:{
+        fontSize: 19,
+        lineHeight: 23,
+        fontFamily: "SF-Bold",
+        color: "titles",
+      },
+      secondary:{
+        fontSize: 12,
+        lineHeight: 16,
+        fontFamily: "SF-Bold",
+        color: "secondaryText",
       },
       text:{
         fontSize: 24,
