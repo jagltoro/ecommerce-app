@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesome5 as Icon } from '@expo/vector-icons';
 import { View, Dimensions, StyleSheet, Image } from "react-native";
-import { Box, Text, useTheme } from "../../Components/Theme";
+import { Box, Text, useTheme } from "../../../Components/Theme";
 
 const { width } = Dimensions.get("window");
 export const SLIDE_HEIGHT = 120;

@@ -3,8 +3,8 @@ import {View, StyleSheet, Dimensions} from "react-native";
 import Animated, {divide} from 'react-native-reanimated';
 import {useScrollHandler} from "react-native-redash";
 
-import {Theme, makeStyles} from "../../Components/Theme";
-import {useInterval} from '../../Hooks/useInterval';
+import {Theme, makeStyles} from "../../../Components/Theme";
+import {useInterval} from '../../../Hooks/useInterval';
 
 import Slide, {SLIDE_HEIGHT} from "./Slide";
 import Dot from "./Dot";
