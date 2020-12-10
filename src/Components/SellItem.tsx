@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Image } from "react-native";
+import { Image, PixelRatio } from "react-native";
 import { FontAwesome as Icon } from "@expo/vector-icons";
 import { Box, Text, useTheme } from "./Theme";
 import { LinearGradient } from "expo-linear-gradient";
@@ -25,6 +25,8 @@ const SellItem = ({
 }: SellItemProps) => {
   const fillRestOfStars = 5 - rating;
   const theme = useTheme();
+  const IMAGE_SIZE = PixelRatio.get() <= 2 ? 155 : 200
+
   return (
     <Box marginBottom="l">
       <Box
@@ -35,8 +37,8 @@ const SellItem = ({
         <Image
           source={picture.src}
           style={{
-            height: 155,
-            width: 155,
+            height: IMAGE_SIZE,
+            width: IMAGE_SIZE,
             resizeMode: "cover",
           }}
         />

@@ -19,7 +19,7 @@ const style = StyleSheet.create({
   },
   image: {
     width: width - 30,
-    resizeMode: "contain",
+    resizeMode: "stretch",
     position: "absolute",
   },
   imageOverlay: {
