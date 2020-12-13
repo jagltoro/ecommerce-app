@@ -73,11 +73,16 @@ export const theme = createTheme({
         fontFamily: "SF-Regular",
       },
 
-      catalogueTitle: {
+      homeCatalogueTitle: {
         fontFamily: "SF-Regular",
         fontSize: 14,
         color: "headerText",
         textAlign: "center"
+      },
+      catalogueTitle: {
+        fontFamily: "SF-Bold",
+        fontSize: 17,
+        color: "titles"
       },
 
       sellItemTitle: {
