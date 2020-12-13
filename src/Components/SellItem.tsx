@@ -3,6 +3,7 @@ import { Image, PixelRatio } from "react-native";
 import { FontAwesome as Icon } from "@expo/vector-icons";
 import { Box, Text, useTheme } from "./Theme";
 import { LinearGradient } from "expo-linear-gradient";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 interface SellItemProps {
   title: string;
@@ -26,6 +27,7 @@ const SellItem = ({
   const fillRestOfStars = 5 - rating;
   const theme = useTheme();
   const IMAGE_SIZE = PixelRatio.get() <= 2 ? 155 : 200
+  const [favorite, setFavorite] = React.useState(false);
 
   return (
     <Box marginBottom="l">
@@ -64,6 +66,7 @@ const SellItem = ({
             </Box>
           </LinearGradient>
         )}
+        
         <Box
           position="absolute"
           bottom={-15}
@@ -71,8 +74,11 @@ const SellItem = ({
           padding="s"
           backgroundColor="favoriteBackground"
           borderRadius="l"
+          
         >
-          <Icon name="heart-o" color={theme.colors["titles"]} size={20} />
+          <TouchableWithoutFeedback onPress={() => setFavorite(favorite => !favorite)}>
+            <Icon name={favorite ? "heart": "heart-o"} color={favorite ? theme.colors["warning"]: theme.colors["titles"]} size={20} />
+          </TouchableWithoutFeedback>
         </Box>
       </Box>
       <Box flexDirection="row" paddingVertical="s">
