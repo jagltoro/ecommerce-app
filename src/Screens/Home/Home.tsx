@@ -45,11 +45,12 @@ const Home = () => {
           <Cataloge />
         </Box>
         <Box marginTop="l" paddingHorizontal="m">
-          <Text variant="title"> Featured</Text>
+          <Text variant="title">Featured</Text>
           <Box flexDirection="row" marginTop="m" justifyContent="space-between">
             <Box>
               {items
                 .filter(({ id }) => id % 2 !== 0)
+                .slice(0,2)
                 .map((item) => (
                   <SellItem key={item.id} {...item} />
                 ))}
@@ -57,6 +58,7 @@ const Home = () => {
             <Box>
               {items
                 .filter(({ id }) => id % 2 === 0)
+                .slice(0,2)
                 .map((item) => (
                   <SellItem key={item.id} {...item} />
                 ))}
