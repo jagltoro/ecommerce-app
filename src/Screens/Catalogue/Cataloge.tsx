@@ -28,7 +28,7 @@ const Cataloge = ({navigation}: CatalogueNavigationProps<"Catalogue">) => {
       <ScrollView style={{ marginBottom: headerHeight }}>
         <Box paddingHorizontal="m">
           {catalogue.map((item) => (
-            <Pressable onPress={() => navigation.navigate('Items')} key={item.id} 
+            <Pressable onPress={() => navigation.push('Items')} key={item.id} 
             style={({ pressed }) => ({
               opacity: pressed ? 0.7 : 1
             })}>

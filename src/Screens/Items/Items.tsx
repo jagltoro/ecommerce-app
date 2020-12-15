@@ -10,8 +10,9 @@ import SellItem from "../../Components/SellItem";
 
 import { items } from "../../../API/SellingItems";
 import { categories } from "../../../API/Categories";
+import { CatalogueNavigationProps } from "../../Components/Navigation/types";
 
-const Items = () => {
+const Items = ({navigation}: CatalogueNavigationProps<"Items">) => {
   const [headerHeight, setHeaderHeight] = React.useState(0);
   const [category, setCategory] = React.useState("All");
   const theme = useTheme();
@@ -27,6 +28,7 @@ const Items = () => {
           paddingVertical="xxl"
           title="Clothing"
           icons={{ left: "arrow-left", right: "sliders-h" }}
+          actions={{left: () => navigation.pop()}}
         />
         <Search />
       </Box>
