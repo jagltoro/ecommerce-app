@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Image } from "react-native";
-import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
+import { Image, Pressable } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import { Box, Text, useTheme } from "../../Components/Theme";
 
 import {catalogue} from '../../../API/Catalogue';
@@ -15,7 +15,7 @@ const Catalogue = () => {
     <Box>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {catalogue.map((item) => (
-          <TouchableOpacity onPress={() => true} key={item.id} style={{marginRight: theme.spacing.s}}>
+          <Pressable onPress={() => true} key={item.id} style={{marginRight: theme.spacing.s}}>
             <Box
               justifyContent="center"
               alignItems="center"
@@ -41,7 +41,7 @@ const Catalogue = () => {
               ></Box>
               <Text variant="homeCatalogueTitle">{item.title}</Text>
             </Box>
-          </TouchableOpacity>
+          </Pressable>
         ))}
       </ScrollView>
     </Box>
