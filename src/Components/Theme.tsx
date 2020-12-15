@@ -125,6 +125,12 @@ export const theme = createTheme({
         fontFamily: "SF-Bold",
         color: "secondaryText",
       },
+      secondaryFilter:{
+        fontSize: 12,
+        lineHeight: 16,
+        fontFamily: "SF-Bold",
+        color: "titles",
+      },
       text:{
         fontSize: 24,
         fontFamily: "SF-Regular",
