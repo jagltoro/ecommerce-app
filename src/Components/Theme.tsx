@@ -72,6 +72,14 @@ export const theme = createTheme({
         fontSize: 12,
         fontFamily: "SF-Regular",
       },
+      clothingCategories: {
+        paddingVertical: 's',
+        paddingHorizontal: 'm',
+        marginRight: 's',
+        borderRadius: 'l',
+        fontSize: 13,
+        fontFamily: "SF-Regular",
+      },
 
       homeCatalogueTitle: {
         fontFamily: "SF-Regular",
