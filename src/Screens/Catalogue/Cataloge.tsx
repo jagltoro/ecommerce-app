@@ -5,7 +5,7 @@ import Header from "../../Components/Header";
 import Search from "../../Components/Search";
 import { Box, Text } from "../../Components/Theme";
 
-import { catalogue } from "../../../API/Categories";
+import { catalogue } from "../../../API/Catalogue";
 
 import { CatalogueNavigationProps } from "../../Components/Navigation/types";
 

@@ -3,7 +3,7 @@ import { Image } from "react-native";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { Box, Text, useTheme } from "../../Components/Theme";
 
-import {catalogue} from '../../../API/Categories';
+import {catalogue} from '../../../API/Catalogue';
 
 
 const CARD_HEIGHT = 88;
