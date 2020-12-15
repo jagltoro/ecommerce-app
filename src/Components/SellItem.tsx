@@ -106,7 +106,7 @@ const SellItem = ({
           ))}
       </Box>
       <Box flexDirection="row" paddingBottom="s">
-        <Text variant="sellItemTitle" style={{ flex: 1, flexWrap: "wrap" }}>
+        <Text variant="sellItemTitle" numberOfLines={2} style={{ flex: 1, flexWrap: "wrap" }}>
           {title}
         </Text>
       </Box>
