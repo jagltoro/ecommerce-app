@@ -16,6 +16,16 @@ export default {
               Catalogue: 'two',
             },
           },
+          FavoriteTab: {
+            screens: {
+              Favorite: 'two',
+            },
+          },
+          ProfileTab: {
+            screens: {
+              Profile: 'two',
+            },
+          },
         },
       },
       NotFound: '*',
