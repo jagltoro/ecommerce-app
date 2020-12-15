@@ -12,7 +12,6 @@ export function HomeTabNavigator() {
       <HomeTabStack.Screen
         name="Home"
         component={Home}
-        options={{ headerTitle: 'Tab One Title' }}
       />
     </HomeTabStack.Navigator>
   );
