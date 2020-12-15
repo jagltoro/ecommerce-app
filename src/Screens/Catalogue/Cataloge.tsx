@@ -1,13 +1,15 @@
 import * as React from "react";
 import { Image } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import Header from "../../Components/Header";
 import Search from "../../Components/Search";
 import { Box, Text } from "../../Components/Theme";
 
 import { catalogue } from "../../../API/Categories";
 
-const Cataloge = () => {
+import { CatalogueNavigationProps } from "../../Components/Navigation/types";
+
+const Cataloge = ({navigation}: CatalogueNavigationProps<"Catalogue">) => {
   const [headerHeight, setHeaderHeight] = React.useState(0);
   return (
     <Box>
@@ -26,6 +28,7 @@ const Cataloge = () => {
       <ScrollView style={{ marginBottom: headerHeight }}>
         <Box paddingHorizontal="m">
           {catalogue.map((item) => (
+            <TouchableOpacity onPress={() => navigation.navigate('Items')} key={item.id} activeOpacity={0.7}>
             <Box
               key={item.id}
               backgroundColor="photoBackground"
@@ -40,6 +43,7 @@ const Cataloge = () => {
               </Box>
               <Image source={item.picture.src} />
             </Box>
+            </TouchableOpacity>
           ))}
         </Box>
       </ScrollView>

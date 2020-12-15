@@ -3,6 +3,7 @@ import * as React from 'react';
 import { CatalogueTabParamList} from '../types';
 
 import Catalogue from '../../../Screens/Catalogue';
+import Items from '../../../Screens/Items';
 
 const CatalogueTabStack = createStackNavigator<CatalogueTabParamList>();
 
@@ -12,7 +13,10 @@ export function CatalogueTabNavigator() {
       <CatalogueTabStack.Screen
         name="Catalogue"
         component={Catalogue}
-        options={{ headerTitle: 'Tab One Title' }}
+      />
+      <CatalogueTabStack.Screen
+        name="Items"
+        component={Items}
       />
     </CatalogueTabStack.Navigator>
   );
