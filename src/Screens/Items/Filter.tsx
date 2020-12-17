@@ -8,7 +8,11 @@ import { colors } from "../../../API/ItemColors";
 import { sizes } from "../../../API/ItemSizes";
 import { categories } from "../../../API/Categories";
 
-const Filter = () => {
+interface FilterProps {
+  closeModal: () => void;
+}
+
+const Filter = ({closeModal}: FilterProps) => {
   const theme = useTheme();
   const [colorSelected, setColor] = React.useState("");
   const [categorySelected, setCategory] = React.useState("");
@@ -17,7 +21,7 @@ const Filter = () => {
 
   return (
     <Box backgroundColor="background" flex={1} marginBottom="xxl">
-      <Header paddingVertical="m" title="Filter" />
+      <Header paddingVertical="m" title="Filter" icons={{right: 'check'}} actions={{right: closeModal}} />
       <ScrollView style={{ marginBottom: 120 }}>
         <Box padding="m">
           <Box>

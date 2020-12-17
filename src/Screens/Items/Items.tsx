@@ -26,6 +26,10 @@ const Items = ({ navigation }: CatalogueNavigationProps<"Items">) => {
     modalizeRef.current?.open();
   };
 
+  const onClose = () => {
+    modalizeRef.current?.close();
+  };
+
   return (
     <Box>
       <Box
@@ -95,7 +99,7 @@ const Items = ({ navigation }: CatalogueNavigationProps<"Items">) => {
         </Box>
       </ScrollView>
       <Modalize ref={modalizeRef}>
-        <Filter/>
+        <Filter closeModal={onClose}/>
       </Modalize>
     </Box>
   );
