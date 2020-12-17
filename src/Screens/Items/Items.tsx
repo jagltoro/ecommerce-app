@@ -2,20 +2,29 @@ import * as React from "react";
 import { ScrollView } from "react-native-gesture-handler";
 import { Pressable } from "react-native";
 import { FontAwesome5 as Icon } from "@expo/vector-icons";
+import { Modalize } from 'react-native-modalize';
+
+import { items } from "../../../API/SellingItems";
+import { categories } from "../../../API/Categories";
 
 import Header from "../../Components/Header";
 import Search from "../../Components/Search";
 import { Box, Text, useTheme } from "../../Components/Theme";
+import { CatalogueNavigationProps } from "../../Components/Navigation/types";
 import SellItem from "../../Components/SellItem";
 
-import { items } from "../../../API/SellingItems";
-import { categories } from "../../../API/Categories";
-import { CatalogueNavigationProps } from "../../Components/Navigation/types";
+import Filter from "./Filter";
 
-const Items = ({navigation}: CatalogueNavigationProps<"Items">) => {
+
+const Items = ({ navigation }: CatalogueNavigationProps<"Items">) => {
   const [headerHeight, setHeaderHeight] = React.useState(0);
   const [category, setCategory] = React.useState("All");
   const theme = useTheme();
+  const modalizeRef = React.useRef<Modalize>(null);
+
+  const onOpen = () => {
+    modalizeRef.current?.open();
+  };
 
   return (
     <Box>
@@ -28,7 +37,7 @@ const Items = ({navigation}: CatalogueNavigationProps<"Items">) => {
           paddingVertical="xxl"
           title="Clothing"
           icons={{ left: "arrow-left", right: "sliders-h" }}
-          actions={{left: () => navigation.pop()}}
+          actions={{ left: () => navigation.pop(), right: onOpen }}
         />
         <Search />
       </Box>
@@ -85,8 +94,12 @@ const Items = ({navigation}: CatalogueNavigationProps<"Items">) => {
           </Box>
         </Box>
       </ScrollView>
+      <Modalize ref={modalizeRef}>
+        <Filter/>
+      </Modalize>
     </Box>
   );
 };
+
 
 export default Items;

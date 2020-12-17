@@ -12,6 +12,7 @@ const palette = {
     "color-basic-text": "#605A65",
     "color-basic-titles": "#34283E",
     "color-gray":   "#9B9B9B",
+    "color-light-gray":   "#E1E1E1",
     "transparent": "transparent",
   };
 
@@ -32,6 +33,8 @@ export const theme = createTheme({
       danger: palette["color-danger"],
       secondaryText: palette['color-gray'],
       transparent: palette['transparent'],
+
+      inputBorder: palette['color-light-gray'],
 
       gradientStart: "#34283E",
       gradientEnd: "#845FA1",
@@ -91,6 +94,11 @@ export const theme = createTheme({
         fontFamily: "SF-Bold",
         fontSize: 17,
         color: "titles"
+      },
+      filterSizes: {
+        fontFamily: "SF-Regular",
+        fontSize: 14,
+        color: "text"
       },
 
       sellItemTitle: {
