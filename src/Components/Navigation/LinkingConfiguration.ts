@@ -14,6 +14,8 @@ export default {
           CatalogueTab: {
             screens: {
               Catalogue: 'two',
+              Items: 'two',
+              Product: 'two',
             },
           },
           FavoriteTab: {

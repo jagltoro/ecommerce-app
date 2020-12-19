@@ -85,7 +85,7 @@ const Items = ({ navigation }: CatalogueNavigationProps<"Items">) => {
               {items
                 .filter(({ id }) => id % 2 !== 0)
                 .map((item) => (
-                  <SellItem key={item.id} {...item} />
+                  <SellItem key={item.id} {...item} onPress={() => navigation.push('Product')}/>
                 ))}
             </Box>
             <Box>

@@ -20,6 +20,7 @@ export type HomeTabParamList = {
 
 /* ================================= */
 export type CatalogueTabParamList = {
+  Product: undefined;
   Catalogue: undefined;
   Items: undefined;
 };

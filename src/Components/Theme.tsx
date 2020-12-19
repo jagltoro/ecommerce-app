@@ -3,7 +3,7 @@ import {ImageStyle, TextStyle, ViewStyle} from "react-native";
 
 const palette = {
     "color-primary": "#3366FF",
-    "color-success": "#00524C",
+    "color-success": "#46AB62",
     "color-info": "#002885",
     "color-warning": "#E7B944",
     "color-danger": "#CE3E3E",
@@ -121,11 +121,21 @@ export const theme = createTheme({
         fontSize: 17,
         color: "titles",
       },
+      itemPrice: {
+        fontFamily: "SF-Bold",
+        fontSize: 25,
+        color: "titles",
+      },
       sellItemOldPrice: {
         fontFamily: "SF-Bold",
         fontSize: 14,
         color: "secondaryText",
         textDecorationLine: 'line-through'
+      },
+
+      stock: {
+        fontFamily: "SF-Regular",
+        fontSize: 12,
       },
 
 
@@ -135,11 +145,23 @@ export const theme = createTheme({
         fontFamily: "SF-Bold",
         color: "titles",
       },
+      titleRegular:{
+        fontSize: 19,
+        lineHeight: 23,
+        fontFamily: "SF-Regular",
+        color: "titles",
+      },
       secondary:{
         fontSize: 12,
         lineHeight: 16,
         fontFamily: "SF-Bold",
         color: "secondaryText",
+      },
+      reviews:{
+        fontSize: 12,
+        lineHeight: 16,
+        fontFamily: "SF-Regular",
+        color: "text",
       },
       secondaryFilter:{
         fontSize: 12,
@@ -148,7 +170,7 @@ export const theme = createTheme({
         color: "titles",
       },
       text:{
-        fontSize: 24,
+        fontSize: 14,
         fontFamily: "SF-Regular",
         color: "text",
       },

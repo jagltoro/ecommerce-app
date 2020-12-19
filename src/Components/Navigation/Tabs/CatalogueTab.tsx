@@ -4,6 +4,7 @@ import { CatalogueTabParamList} from '../types';
 
 import Catalogue from '../../../Screens/Catalogue';
 import Items from '../../../Screens/Items';
+import Product from '../../../Screens/Product';
 
 const CatalogueTabStack = createStackNavigator<CatalogueTabParamList>();
 
@@ -17,6 +18,10 @@ export function CatalogueTabNavigator() {
       <CatalogueTabStack.Screen
         name="Items"
         component={Items}
+      />
+      <CatalogueTabStack.Screen
+        name="Product"
+        component={Product}
       />
     </CatalogueTabStack.Navigator>
   );
