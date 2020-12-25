@@ -13,10 +13,18 @@ export type BottomTabParamList = {
   Favorites: undefined;
   Profile: undefined;
 };
-
+/** =================================== */
 export type HomeTabParamList = {
   Home: undefined;
+  Product: undefined;
 };
+export interface HomeNavigationProps<
+RouteName extends keyof HomeTabParamList
+> {
+  navigation: StackNavigationProp<HomeTabParamList, RouteName>
+  route: RouteProp<HomeTabParamList,RouteName>
+}
+/** =================================== */
 
 /* ================================= */
 export type CatalogueTabParamList = {

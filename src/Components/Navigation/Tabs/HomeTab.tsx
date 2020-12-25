@@ -3,6 +3,7 @@ import * as React from 'react';
 import { HomeTabParamList} from '../types';
 
 import Home from '../../../Screens/Home';
+import Product from '../../../Screens/Product';
 
 const HomeTabStack = createStackNavigator<HomeTabParamList>();
 
@@ -12,6 +13,10 @@ export function HomeTabNavigator() {
       <HomeTabStack.Screen
         name="Home"
         component={Home}
+      />
+      <HomeTabStack.Screen
+        name="Product"
+        component={Product}
       />
     </HomeTabStack.Navigator>
   );

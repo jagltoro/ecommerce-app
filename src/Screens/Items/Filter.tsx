@@ -77,7 +77,7 @@ const Filter = ({closeModal}: FilterProps) => {
                 }>
                 {
                   categories.map((category,index) => (
-                    <Picker.Item label={category} value={category} />
+                    <Picker.Item label={category} value={category} key={index} />
                   ))
                 }
               </Picker>

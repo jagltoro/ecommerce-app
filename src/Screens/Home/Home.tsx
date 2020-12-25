@@ -9,11 +9,12 @@ import Slideshow from "./Slideshow";
 import Cataloge from "./Catalogue";
 
 import SellItem from "../../Components/SellItem";
+import { HomeNavigationProps } from "../../Components/Navigation/types";
 
 import { items } from "../../../API/SellingItems";
 import { ScrollView } from "react-native-gesture-handler";
 
-const Home = () => {
+const Home = ({ navigation }: HomeNavigationProps<"Items">) => {
   const theme= useTheme();
   const [headerHeight, setHeaderHeight] = React.useState(0)
 
@@ -52,7 +53,7 @@ const Home = () => {
                 .filter(({ id }) => id % 2 !== 0)
                 .slice(0,2)
                 .map((item) => (
-                  <SellItem key={item.id} {...item} />
+                  <SellItem key={item.id} {...item} onPress={() => navigation.push('Product')} />
                 ))}
             </Box>
             <Box>
@@ -60,7 +61,7 @@ const Home = () => {
                 .filter(({ id }) => id % 2 === 0)
                 .slice(0,2)
                 .map((item) => (
-                  <SellItem key={item.id} {...item} />
+                  <SellItem key={item.id} {...item} onPress={() => navigation.push('Product')} />
                 ))}
             </Box>
           </Box>

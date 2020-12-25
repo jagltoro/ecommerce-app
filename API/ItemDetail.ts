@@ -2,7 +2,6 @@ export const ItemDetail = {
   title: "Astylish Women Open Front Long Sleeve Chunky Knit Cardigan",
   colors: [
     {
-      name: "Yellow-Brown",
       images: [
         require('#/images/items/itemDetail/Yellow-Brown/E59B5C828503B3693B2473A5F056DEEA.png'),
         require('#/images/items/itemDetail/Yellow-Brown/208506C3CF6BA1054E418B7422348480.png'),
@@ -10,7 +9,6 @@ export const ItemDetail = {
       ]
     },
     {
-      name: "Brown",
       images: [
         require('#/images/items/itemDetail/Brown/71dBjHR-fXL._AC_SY500._SX._UX._SY._UY_.jpg'),
         require('#/images/items/itemDetail/Brown/71qL6ymLGrL._AC_SY500._SX._UX._SY._UY_.jpg'),
@@ -18,7 +16,6 @@ export const ItemDetail = {
       ]
     },
     {
-      name: "Pink",
       images: [
         require('#/images/items/itemDetail/Pink/71Gh5qaygJL._AC_SY500._SX._UX._SY._UY_.jpg'),
         require('#/images/items/itemDetail/Pink/71HP-RU8u3L._AC_SY500._SX._UX._SY._UY_.jpg'),
@@ -26,14 +23,12 @@ export const ItemDetail = {
       ]
     },
     {
-      name: "Black",
       images: [
         require('#/images/items/itemDetail/Black/AF579B061700D90E4AA9EA2CF6CC3EDD.jpg'),
         require('#/images/items/itemDetail/Black/71A4GebkylL._AC_UY500_.jpg'),
       ]
     },
     {
-      name: "Cream White",
       images: [
         require('#/images/items/itemDetail/White/71J-HJfdcAL._AC_SY500._SX._UX._SY._UY_.jpg'),
         require('#/images/items/itemDetail/White/61x-dryKnEL._AC_SY500._SX._UX._SY._UY_.jpg'),
@@ -41,7 +36,6 @@ export const ItemDetail = {
       ]
     },
     {
-      name: "Dark Gray",
       images: [
         require('#/images/items/itemDetail/Dark-Gray/713JXFuMFyL._AC_SY500._SX._UX._SY._UY_.jpg'),
         require('#/images/items/itemDetail/Dark-Gray/71Ju78RNWWL._AC_SY500._SX._UX._SY._UY_.jpg'),

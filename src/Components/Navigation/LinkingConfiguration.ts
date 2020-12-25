@@ -9,6 +9,7 @@ export default {
           HomeTab: {
             screens: {
               Home: 'one',
+              Product: 'one',
             },
           },
           CatalogueTab: {

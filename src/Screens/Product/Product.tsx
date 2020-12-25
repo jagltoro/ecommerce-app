@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Dimensions, Image, Pressable } from "react-native";
+import { Dimensions, Pressable } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome as Icon } from "@expo/vector-icons";
@@ -10,25 +10,32 @@ import RatingStars from "../../Components/RatingStars";
 import { ItemDetail } from "../../../API/ItemDetail";
 import { items } from "../../../API/SellingItems";
 import SellItem from "../../Components/SellItem";
+import Slideshow from "./Slideshow";
+import Variants from "./Variants";
+import Description from "./Description";
+import Review from "./Review";
+import { CatalogueNavigationProps } from "../../Components/Navigation/types";
+import PressableOpacity from "../../Components/PressableOpacity";
 
 const { width, height } = Dimensions.get("window");
 
-const Product = () => {
-  const [lines, setLines] = React.useState(4);
+const Product = ({ navigation }: CatalogueNavigationProps<"Product">) => {
   const theme = useTheme();
+  const [mainImages, setMainImages] = React.useState(ItemDetail.colors[0]);
+
+  const handleItemVariant = (color: { images: number[] }) => {
+    setMainImages(color);
+  };
+
   return (
     <Box>
       <ScrollView>
         <Box style={{ height: height / 2 }} backgroundColor="photoBackground">
-          <Image
-            source={require("#/images/items/itemDetail/Yellow-Brown/E59B5C828503B3693B2473A5F056DEEA.png")}
-            style={{
-              width: "100%",
-              height: height / 2,
-              resizeMode: "contain",
-            }}
+          <Slideshow slides={mainImages.images} />
+          <LinearGradient
+            colors={["rgba(32,32,32,0.37)", "rgba(32,32,32,0)"]}
+            style={{ height: 50, position: "absolute", width: width }}
           />
-          <LinearGradient colors={['rgba(32,32,32,0.37)', 'rgba(32,32,32,0)']} style={{height: 50, position: "absolute", width: width}}/>
         </Box>
         <Box
           padding="m"
@@ -70,24 +77,10 @@ const Product = () => {
 
           <Box marginVertical="s">
             <Text>Colors</Text>
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              style={{ marginTop: 15 }}
-            >
-              {ItemDetail.colors.map((color, index) => (
-                <Image
-                  key={index}
-                  source={color.images[0]}
-                  style={{
-                    width: 47,
-                    height: 47,
-                    resizeMode: "contain",
-                    marginRight: 12,
-                  }}
-                />
-              ))}
-            </ScrollView>
+            <Variants
+              colors={ItemDetail.colors}
+              onPress={handleItemVariant}
+            />
           </Box>
 
           <Box marginVertical="s">
@@ -117,22 +110,7 @@ const Product = () => {
             </ScrollView>
           </Box>
         </Box>
-        <Box
-          marginTop="s"
-          padding="m"
-          backgroundColor="photoBackground"
-          borderRadius="m"
-        >
-          <Text variant="title" marginBottom="s">
-            Product details
-          </Text>
-          <Text variant="text" numberOfLines={lines}>{ItemDetail.description}</Text>
-          <Pressable onPress={() => setLines((lines) => lines > 4 ? 4 : 99 )}>
-            <Box justifyContent="center" alignItems="center" marginTop="s">
-              <Icon name={lines > 4 ? "chevron-up" : "chevron-down"} size={16} color={theme.colors['secondaryText']} />
-            </Box>
-          </Pressable>
-        </Box>
+        <Description description={ItemDetail.description} iconColor={theme.colors["secondaryText"]} />
         <Box
           marginTop="s"
           padding="m"
@@ -158,63 +136,15 @@ const Product = () => {
             </Box>
           </Box>
 
-          {ItemDetail.reviews.map((review, index) => (
-            <Box key={index} marginBottom="m">
-              <Text>{review.user}</Text>
-              <Box
-                flexDirection="row"
-                alignItems="center"
-                justifyContent="space-between"
-                marginTop="s"
-              >
-                <RatingStars
-                  rating={review.rating}
-                  color={theme.colors["warning"]}
-                />
-                <Text variant="secondary">{review.date}</Text>
-              </Box>
-              <Text variant="text">{review.review}</Text>
-              <Box
-                flexDirection="row"
-                alignItems="center"
-                justifyContent="space-between"
-              >
-                <Text
-                  style={{
-                    fontSize: 11,
-                    fontFamily: "SF-Regular",
-                    color: theme.colors["secondaryText"],
-                    marginTop: 5,
-                  }}
-                >
-                  {Math.floor(Math.random() * (100 - 10) + 10)} people found
-                  this helpful
-                </Text>
-                <Box
-                  flexDirection="row"
-                  alignItems="center"
-                  justifyContent="center"
-                >
-                  <Text
-                    style={{
-                      fontSize: 11,
-                      fontFamily: "SF-Regular",
-                      color: theme.colors["secondaryText"],
-                      marginTop: 5,
-                    }}
-                  >
-                    Helpful
-                  </Text>
-                  <Icon
-                    name="thumbs-up"
-                    size={12}
-                    color={theme.colors["secondaryText"]}
-                    style={{ marginLeft: 5, marginTop: 4 }}
-                  />
-                </Box>
-              </Box>
-            </Box>
-          ))}
+          {ItemDetail.reviews.map((review, index) => {
+            const data = {
+              ...review,
+              ratingColor: theme.colors['warning'],
+              colorSecondary: theme.colors['secondaryText']
+            };
+            return (<Review key={index} review={data} /> )
+          }
+          )}
         </Box>
         <Box marginTop="m" padding="m">
           <Text variant="title" marginBottom="s">
@@ -223,11 +153,45 @@ const Product = () => {
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {items.map((item) => (
               <Box key={item.id} marginRight="m">
-                <SellItem {...item} onPress={() => true} />
+                <SellItem {...item}  onPress={() => navigation.push('Product')} />
               </Box>
             ))}
           </ScrollView>
         </Box>
+          <Box
+            backgroundColor="photoBackground"
+            borderTopLeftRadius="l"
+            borderTopRightRadius="l"
+            padding="m"
+            flexDirection="row"
+            alignItems="center"
+            justifyContent="space-between"
+          >
+            <PressableOpacity onPress={() =>  navigation.pop()} padding={theme.spacing.s} borderRadius={theme.borderRadii.xl} onPressBg="rgba(0,0,0,0.1)">
+              <Icon
+                name="arrow-left"
+                size={24}
+                color={theme.colors["secondaryText"]}
+              />
+            </PressableOpacity>
+            <Pressable>
+              <Box
+                paddingHorizontal="xxl"
+                paddingVertical="m"
+                backgroundColor="warning"
+                borderRadius="m"
+              >
+                <Text variant="catalogueTitle" color="headerText">
+                  Add to Cart
+                </Text>
+              </Box>
+            </Pressable>
+            <Icon
+              name="heart-o"
+              size={24}
+              color={theme.colors["secondaryText"]}
+            />
+          </Box>
       </ScrollView>
     </Box>
   );
