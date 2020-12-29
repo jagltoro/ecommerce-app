@@ -137,6 +137,11 @@ export const theme = createTheme({
         fontFamily: "SF-Regular",
         fontSize: 12,
       },
+      profileLinks:{
+        fontSize: 17,
+        fontFamily: "SF-Bold",
+        color: "titles",
+      },
 
 
       title:{
